@@ -1,5 +1,7 @@
 package com.munsiji.resource.reqres;
 
+
+
 public class LoginReq {
     String uname;
     String pwd;

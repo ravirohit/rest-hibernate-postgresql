@@ -12,17 +12,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
+import com.munsiji.resource.UserDetail;
 import com.munsiji.resource.reqres.LoginReq;
 import com.munsiji.resource.reqres.ServerResponse;
 import com.munsiji.service.LoginService;
+import com.munsiji.service.RegisterProcess;
 
 
-
-@Path("/rest")
 @Service
+@Path("/rest")
 public class RestControllerService {
     @Autowired
     LoginService loginService;
+    @Autowired
+    RegisterProcess registerProcess;
 	
 	@PostConstruct
 	public void init(){
@@ -50,11 +53,22 @@ public class RestControllerService {
 		System.out.println("login method excuted:"+loginReq.getUname());
 		System.out.println("loginService:"+loginService);;
 		ServerResponse response=null;
-		LoginService loginService=new LoginService();
+		//LoginService loginService=new LoginService();
 		response=loginService.processReq(loginReq);
 		return response;
 		
 	}
+	@POST 
+	@Path("/register")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public ServerResponse  register(UserDetail user){
+		ServerResponse response=null;
+		System.out.println("called register:"+user);
+		registerProcess.register(user);
+		return response;
+	}
+	
 	
 	
 }

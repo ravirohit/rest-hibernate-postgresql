@@ -43,11 +43,18 @@
 	</dependency>
 	    
     <!-- Mysql Connector -->
-    <dependency>
+    <!-- <dependency>
 	    <groupId>postgresql</groupId>
         <artifactId>postgresql</artifactId>
-        <version>9.1-901.jdbc4</version>
+        <version>9.1-901.jdbc4</version>         
+	</dependency> -->
+	<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+	<dependency>
+	    <groupId>org.postgresql</groupId>
+	    <artifactId>postgresql</artifactId>
+	    <version>9.3-1102-jdbc41</version>
 	</dependency>
+		
     <!-- Hibernate 5.2.9 Final -->
     <dependency>
       <groupId>org.hibernate</groupId>
