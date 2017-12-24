@@ -1,10 +1,16 @@
-how to deploye:
+====================== Version has been used in Spring-Rest-Hibernate project:===================================
+Spring: 4.3.7.RELEASE
+hibernate-core: 5.2.9.Final
+Jersey Version: 2.19
+jaxrs version: 2.0.1
+DB : PostgreSQL 8.4
+
+=====================================================how to deploye:==============================================
 -> create a folder with name: "projectservices"(as name of the project : projectservices )
 -> copy all the contains inside the folder "restfull_service_v2.0" after cloning to the above folder.
 -> then start working from the folder created in step 1.
 
-######################################## REST ###############################################
-Note:
+======================================================== Note:=====================================================
 Rest service can simply return or take String JSON Object. but if we are sending JSON object in the req to service and receiving parameter of the service method is any Java Pojo class to map the JSON Object intead of String, it will throw error for not supporting media type.
 Maven Dependecy to solve the above issue:
 <dependency>
@@ -13,8 +19,19 @@ Maven Dependecy to solve the above issue:
 	<version>2.17</version>
 </dependency>
 
-########################################### SPRING ###########################################
 --> <context:component-scan base-package="x.y.z"/>
 will work since the rest of the packages are sub packages of "x.y.z". Thus, you dont need to mention each package individually.
 --> AppicationContext is part of module ->spring-web
 --> ContextLoaderListener is part of module ->spring-context
+
+=============================== Steps Need to be followed to connect to the DB using Hibernate ======================
+-> download the PostGreSQL and install it.
+-> add the maven artifact to download the postGreSQL connector. here it is
+	<dependency>
+	    <groupId>org.postgresql</groupId>
+	    <artifactId>postgresql</artifactId>
+	    <version>9.3-1102-jdbc41</version>
+	</dependency>
+-> then configure the Hibernate cfg/ or spring-context.xml file.
+
+
