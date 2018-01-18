@@ -6,7 +6,7 @@ jaxrs version: 2.0.1
 DB : PostgreSQL 8.4
 
 =====================================================how to deploye:==============================================
--> create a folder with name: "projectservices"(as name of the project : projectservices )
+-> create a folder with name: "projectservices"(as name of the project : projectservices ).....
 -> copy all the contains inside the folder "restfull_service_v2.0" after cloning to the above folder.
 -> then start working from the folder created in step 1.
 -> then we can hit the service from browser if it is working fine:
