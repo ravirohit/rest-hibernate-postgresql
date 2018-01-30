@@ -17,9 +17,11 @@ import javax.ws.rs.container.ResourceInfo;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.ext.Provider;
 
 import org.glassfish.jersey.internal.util.Base64;
 
+@Provider
 public class AuthenticationFilter implements ContainerRequestFilter{
 	@Context
     private ResourceInfo resourceInfo;
